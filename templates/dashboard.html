@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard</title>
+  </head>
+  <body>
+    <h1>Dashboard</h1>
+    {% if role == "admin" %}
+    <p>Welcome, Admin! You can manage students and exams here.</p>
+    {% elif role == "student" %}
+    <p>Welcome, Student! You can view your exam results here.</p>
+    {% endif %}
+    <p><a href="/logout">Log Out</a></p>
+  </body>
+</html>
