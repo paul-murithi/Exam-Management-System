@@ -9,3 +9,5 @@ venv/
 
 # Instance folder
 instance/
+
+/migrations/
