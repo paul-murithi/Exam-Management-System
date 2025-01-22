@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upcoming Exams</title> 
+</head>
+<body>
+{% extends "base.html" %}
+
+{% block title %}Upcoming Exams{% endblock %}
+
+{% block content %}
+<h1>Upcoming Exams</h1>
+
+{% if exams %}
+<table class="table">
+    <thead>
+        <tr>
+            <th>Subject</th>
+            <th>Date</th>
+            <th>Time</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for exam in exams %}
+        <tr>
+            <td>{{ exam.subject }}</td>
+            <td>{{ exam.date }}</td>
+            <td>{{ exam.time }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% else %}
+<p class="alert alert-info">No exams are currently scheduled. Please check back later.</p>
+{% endif %}
+
+<a href="/">Back to Dashboard</a>
+{% endblock %}
+</body>
+</html>
