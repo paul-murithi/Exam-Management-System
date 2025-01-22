@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Student Profile</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f7f7f7;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        color: black;
+      }
+
+      /* Heading */
+      h1 {
+        text-align: center;
+        margin-bottom: 30px;
+        font-size: 28px;
+        font-weight: 700;
+        position: relative;
+        z-index: 1;
+      }
+
+      /* Profile Information Styling */
+      p {
+        font-size: 18px;
+        line-height: 1.6;
+        margin-bottom: 15px;
+        position: relative;
+        z-index: 1;
+      }
+
+      strong {
+        font-weight: bold;
+      }
+
+      /* Back to Dashboard Link */
+      a {
+        color: #007bff;
+        text-decoration: none;
+        font-size: 18px;
+        display: block;
+        text-align: center;
+        margin-top: 20px;
+        position: relative;
+        z-index: 1;
+      }
+
+      a:hover {
+        text-decoration: underline;
+      }
+
+      @media (max-width: 768px) {
+        .container {
+          width: 90%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    {% extends "base.html" %} {% block title %}Your Profile{% endblock %} {%
+    block content %}
+    <div>
+      <h1>Your Profile</h1>
+      <p><strong>Name:</strong> {{ student.name }}</p>
+      <p><strong>Email:</strong> {{ student.email }}</p>
+      <p><strong>Course:</strong> {{ student.course }}</p>
+      <a href="/">Back to Dashboard</a>
+    </div>
+    {% endblock %}
+  </body>
+</html>

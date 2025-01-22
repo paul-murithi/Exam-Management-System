@@ -7,7 +7,7 @@
     <style>
       body {
         font-family: Arial, sans-serif;
-        background-color: #f2f2f2;
+        background-color: #e5e5e5;
         margin: 0;
         padding: 0;
         display: flex;
@@ -15,62 +15,116 @@
         align-items: center;
         height: 100vh;
       }
-      h1 {
-        color: #333;
-      }
-      form {
-        background-color: #fff;
-        padding: 20px;
+
+      /* Container for login form */
+      .container {
+        background-color: white;
+        padding: 30px;
         border-radius: 8px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        width: 100%;
+        max-width: 400px;
       }
-      label {
+
+      /* Heading */
+      h1 {
+        text-align: center;
+        color: #333;
+        margin-bottom: 30px;
+      }
+
+      /* Form Input Styles */
+      .form-label {
         display: block;
-        margin: 10px 0 5px;
+        font-size: 14px;
+        margin-bottom: 8px;
         color: #555;
       }
-      input[type="text"],
-      input[type="password"] {
+
+      .form-control {
         width: 100%;
-        padding: 10px;
-        margin-bottom: 10px;
+        padding: 12px;
         border: 1px solid #ccc;
         border-radius: 4px;
+        font-size: 14px;
+        color: #333;
+        margin-bottom: 20px;
       }
-      button {
-        width: 100%;
-        padding: 10px;
-        background-color: #28a745;
+
+      .form-control:focus {
+        border-color: #007bff;
+        outline: none;
+      }
+
+      /* Buttons */
+      .btn-primary {
+        background-color: #007bff;
         color: white;
         border: none;
+        padding: 12px;
+        width: 100%;
         border-radius: 4px;
+        font-size: 16px;
         cursor: pointer;
       }
-      button:hover {
-        background-color: #218838;
+
+      .btn-primary:hover {
+        background-color: #0056b3;
       }
+
+      /* Links */
       p {
-        margin-top: 10px;
-        color: #777;
+        text-align: center;
+        margin-top: 20px;
       }
-      a {
+
+      p a {
         color: #007bff;
         text-decoration: none;
       }
-      a:hover {
+
+      p a:hover {
         text-decoration: underline;
+      }
+
+      /* Media queriess */
+      @media (max-width: 480px) {
+        .container {
+          width: 90%;
+        }
       }
     </style>
   </head>
   <body>
-    <h1>Log in</h1>
-    <form action="/login" method="POST">
-      <label for="username">Username:</label>
-      <input type="text" id="username" name="username" required />
-      <label for="password">Password:</label>
-      <input type="password" id="password" name="password" required />
-      <button type="submit">Log in</button>
-    </form>
-    <p>Don't have an account? <a href="/signup">Sign up</a></p>
+    {% extends "base.html" %} {% block title %}Login{% endblock %} {% block
+    content %}
+    <div class="container">
+      <h1>Login</h1>
+      <form method="POST" action="/login">
+        <div class="mb-3">
+          <label for="username" class="form-label">Username</label>
+          <input
+            type="text"
+            class="form-control"
+            id="username"
+            name="username"
+            required
+          />
+        </div>
+        <div class="mb-3">
+          <label for="password" class="form-label">Password</label>
+          <input
+            type="password"
+            class="form-control"
+            id="password"
+            name="password"
+            required
+          />
+        </div>
+        <button type="submit" class="btn-primary">Login</button>
+      </form>
+      <p><a href="/signup">Don't have an account? Sign up here.</a></p>
+    </div>
+    {% endblock %}
   </body>
 </html>

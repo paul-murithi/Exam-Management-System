@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin | View Results</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f7f7f7;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      /* Main Container */
+      .container {
+        width: 80%;
+        max-width: 1200px;
+        background-color: white;
+        margin-top: 40px;
+        padding: 30px;
+        border-radius: 8px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      }
+
+      /* Heading */
+      h1 {
+        text-align: center;
+        color: #333;
+        margin-bottom: 30px;
+        font-size: 24px;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-bottom: 30px;
+      }
+
+      th,
+      td {
+        padding: 12px;
+        text-align: left;
+        border: 1px solid #ddd;
+      }
+
+      th {
+        background-color: #007bff;
+        color: white;
+      }
+
+      td {
+        background-color: #f9f9f9;
+      }
+
+      tr:hover {
+        background-color: #f1f1f1;
+      }
+
+      /* Links */
+      a {
+        color: #007bff;
+        text-decoration: none;
+        font-size: 18px;
+        display: block;
+        text-align: center;
+        margin-top: 20px;
+      }
+
+      a:hover {
+        text-decoration: underline;
+      }
+
+      @media (max-width: 768px) {
+        .container {
+          width: 90%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    {% extends "base.html" %} {% block title %}Your Results{% endblock %} {%
+    block content %}
+    <div class="container">
+      <h1>Your Results</h1>
+      <table>
+        <thead>
+          <tr>
+            <th>Subject</th>
+            <th>Date</th>
+            <th>Grade</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for result in results %}
+          <tr>
+            <td>{{ result.exam.subject }}</td>
+            <td>{{ result.exam.date }}</td>
+            <td>{{ result.grade }}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+      <a href="/">Back to Dashboard</a>
+    </div>
+    {% endblock %}
+  </body>
+</html>
