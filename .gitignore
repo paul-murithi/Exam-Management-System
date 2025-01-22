@@ -1,0 +1,11 @@
+# Byte-compiled files
+__pycache__/
+
+# Virtual environment
+venv/
+
+# SQLite database
+*.db
+
+# Instance folder
+instance/
