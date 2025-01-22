@@ -4,6 +4,78 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Upcoming Exams</title> 
+     <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f7f7f7;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .container {
+        width: 80%;
+        max-width: 1200px;
+        background-color: white;
+        margin-top: 40px;
+        padding: 30px;
+        border-radius: 8px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      }
+
+      h1 {
+        text-align: center;
+        color: #333;
+        margin-bottom: 30px;
+        font-size: 24px;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-bottom: 30px;
+      }
+
+      th,
+      td {
+        padding: 12px;
+        text-align: left;
+        border: 1px solid #ddd;
+      }
+
+      th {
+        background-color: #007bff;
+        color: white;
+      }
+
+      td {
+        background-color: #f9f9f9;
+      }
+
+      .alert {
+        padding: 15px;
+        margin-bottom: 20px;
+        border-radius: 5px;
+        background-color: #17a2b8;
+        color: white;
+        text-align: center;
+      }
+
+      a {
+        color: #007bff;
+        text-decoration: none;
+        font-size: 18px;
+        display: block;
+        text-align: center;
+        margin-top: 20px;
+      }
+
+      a:hover {
+        text-decoration: underline;
+      }
+    </style>
 </head>
 <body>
 {% extends "base.html" %}
