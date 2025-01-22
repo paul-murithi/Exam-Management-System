@@ -278,10 +278,10 @@ with app.app_context():
   
     # Create the admin account at startup
     if not User.query.filter_by(username='admin').first():
-        admin = User(username='admin', password='admin123', role='admin')
+        admin = User(username='admin', email='admin@example.com', password='admin123', role='admin')
         db.session.add(admin)
         db.session.commit()
-        print("Admin account created: Username='admin', Password='admin123'")
+        print("Admin account created: Username='admin', Password='admin123', Email='admin@sample.com'")
 
 
 # Main function
